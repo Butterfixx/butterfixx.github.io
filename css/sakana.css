@@ -1,0 +1,13 @@
+/* Sakana 挂件容器样式 - 模块化独立样式 */
+#sakana-box {
+  /* 固定右下角悬浮，滚动不位移 */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  /* 层级适中，不会遮挡关键按钮，也不会被页脚完全盖住 */
+  z-index: 0;
+  /* 旋转变换基准点为右下角 */
+  transform-origin: 100% 100%;
+  /* 允许鼠标拖拽、点击切换角色 */
+  pointer-events: auto;
+}

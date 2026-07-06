@@ -1,0 +1,55 @@
+/* 左下角悬浮按钮外层容器 */
+.float-left-btn {
+  /* 固定定位，页面滚动不会跟着移动 */
+  position: fixed;
+  /* 距离页面底部 80px，避开回到顶部按钮防止遮挡 */
+  bottom: 80px;
+  /* 距离页面左侧 20px */
+  left: 20px;
+  /* 层级最高，保证不会被页面其他元素盖住 */
+  z-index: 999;
+  /* 开启弹性布局 */
+  display: flex;
+  /* 垂直从上到下排列按钮 */
+  flex-direction: column;
+  /* 多个按钮上下统一间距 12px，解决挤在一起 */
+  gap: 12px;
+}
+
+/* 单个按钮链接样式 */
+.float-left-btn a {
+  /* 弹性布局，图标居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 18px;
+  transition: all 0.25s ease;
+  /* 不要在这里加 margin-top，统一交给容器 gap 管理 */
+}
+
+/* 鼠标悬浮按钮效果 */
+.float-left-btn a:hover {
+  transform: scale(1.1);
+  background: var(--theme-color);
+  color: #fff;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .float-left-btn {
+    bottom: 60px;
+    left: 12px;
+    gap: 10px; /* 手机端缩小间距 */
+  }
+  .float-left-btn a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
